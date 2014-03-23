@@ -1,0 +1,27 @@
+<%= form_for(@private_area) do |f| %>
+  <% if @private_area.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@private_area.errors.count, "error") %> prohibited this private_area from being saved:</h2>
+
+      <ul>
+      <% @private_area.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %><br>
+
+    <%= f.label :main_location %><br>
+    <%= f.text_field :main_location %><br>
+
+    <%= f.label :sub_location %><br>
+    <%= f.text_field :sub_location %><br>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

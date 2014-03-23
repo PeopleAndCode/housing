@@ -1,0 +1,27 @@
+<h1>Listing common_areas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @common_areas.each do |common_area| %>
+      <tr>
+   
+        <td><%= link_to 'Show', common_area %></td>
+        <td><%= link_to 'Edit', edit_common_area_path(common_area) %></td>
+        <td><%= link_to 'Destroy', common_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Common area', new_common_area_path %>

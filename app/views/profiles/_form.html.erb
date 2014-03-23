@@ -1,0 +1,43 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %><br>
+
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %><br>
+
+    <%= f.label :building %><br>
+    <%= f.text_field :building %><br>
+
+    <%= f.label :unit %><br>
+    <%= f.text_field :unit %><br>
+
+    <p> Please choose one of the following options: </p>
+
+    <%= f.select :location_option, options_for_select(Profile::LOCATION_OPTION) %>
+    <div id="radio_buttons">
+      <%= radio_button_tag(:location_option, "unit", :value => "unit") %>
+      <%= label_tag(:location_private, "A repair is needed in my unit.") %>
+      <%= radio_button_tag(:location_option, "common", :value => "common") %>
+      <%= label_tag(:location_common, "A repair is needed in a common area of the building.") %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <%#= link_to :remote => true, 'Submit now', :url => {:action=>"create"}, :submit =>
+'radio_buttons' %>
+  </div>
+<% end %>
+
