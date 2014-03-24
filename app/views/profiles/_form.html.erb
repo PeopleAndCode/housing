@@ -26,7 +26,7 @@
 
     <p> Please choose one of the following options: </p>
 
-    <%= f.select :location_option, options_for_select(Profile::LOCATION_OPTION) %>
+    
     <div id="radio_buttons">
       <%= radio_button_tag(:location_option, "unit", :value => "unit") %>
       <%= label_tag(:location_private, "A repair is needed in my unit.") %>
