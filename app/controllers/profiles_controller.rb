@@ -27,12 +27,23 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @location_option = params[:profile][:location_option]
 
+    puts params
+    puts @location_option
+
+    redirect_target = case @location_option
+      when 'unit'
+        new_private_area_path(@profile)
+      when 'common'
+        new_common_area_path(@profile)
+      else
+        new_profile_path(@profile)
+    end
+    
+    puts redirect_target 
+    
     respond_to do |format|
-      if @profile.save && @location_option == 'unit'
-        format.html { redirect_to new_private_area_path(@profiles), notice: 'Profile was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @profile }
-      elsif @profile.save && @location_option == 'common'
-        format.html { redirect_to new_common_area_path(@profiles), notice: 'Profile was successfully created.' }
+      if @profile.save
+        format.html { redirect_to redirect_target, notice: 'Profile was successfully created.' }
         format.json { render action: 'show', status: :created, location: @profile }
       else
         format.html { render action: 'new' }
