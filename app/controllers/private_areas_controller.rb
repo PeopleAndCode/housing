@@ -28,7 +28,7 @@ class PrivateAreasController < ApplicationController
 
     respond_to do |format|
       if @private_area.save
-        format.html { redirect_to @private_area, notice: 'Private area was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Private area was successfully created.' }
         format.json { render action: 'show', status: :created, location: @private_area }
       else
         format.html { render action: 'new' }

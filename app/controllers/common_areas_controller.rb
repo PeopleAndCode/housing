@@ -28,7 +28,7 @@ class CommonAreasController < ApplicationController
 
     respond_to do |format|
       if @common_area.save
-        format.html { redirect_to @common_area, notice: 'Common area was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Common area was successfully created.' }
         format.json { render action: 'show', status: :created, location: @common_area }
       else
         format.html { render action: 'new' }

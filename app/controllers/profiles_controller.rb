@@ -52,23 +52,6 @@ class ProfilesController < ApplicationController
     end
   end
 
-#   def create
-#     @profile = Profile.new(profile_params)
-
-#     respond_to do |format|
-
-#     if @profile.save && @value == 'private'   #remember that params come back as strings
-#           format.html { redirect_to new_private_area_path(@profiles), notice: 'Profile was successfully created.' }
-#         format.json { render action: 'show', status: :created, location: @profile }
-#     elsif @profile.save && @value == 'common' 
-#         format.html { redirect_to new_common_area_path(@profiles), notice: 'Profile was successfully created.' }
-#         format.json { render action: 'show', status: :created, location: @profile }
-#     else
-#      format.html { render action: 'new' }
-#         format.json { render json: @profile.errors, status: :unprocessable_entity }
-#   end
-# end
-# end 
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
