@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-    @location_option = params[:profile][:location_option]
+    @location_option = params[:location_option]
 
     puts params
     puts @location_option
