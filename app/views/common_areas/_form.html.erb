@@ -1,4 +1,4 @@
-<%= form_for(@common_area) do |f| %>
+<%= simple_form_for(@common_area) do |f| %>
   <% if @common_area.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@common_area.errors.count, "error") %> prohibited this common_area from being saved:</h2>
@@ -12,14 +12,40 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %><br>
+    <%= f.input :repair_type, collection: ["Heat/air conditioning",
+      "Plumbing",
+      "Leak", 
+      "Maintenance (broken door, window, cracked wall, plaster, ceiling, floor, insulation)",
+      "Lighting",
+      "Pests",
+      "Fridge/Stove",
+      "Electricity",
+      "Smoke detector",
+      "Cabinets",
+      "Locks",
+      "Fire alarm",
+      "Stairwell",
+      "Graffiti"] %>
+    
+    <%= f.input :floor %>
 
-    <%= f.label :main_location %><br>
-    <%= f.text_field :main_location %><br>
-
-    <%= f.label :sub_location %><br>
-    <%= f.text_field :sub_location %><br>
+    <%= f.input :main_location, collection: ["Lobby",
+      "Elevator",
+      "Garbage chute",
+      "Laundry room",
+      "Staircase",
+      "Common room",
+      "Garbage area",
+      "Party Room",
+      "Kitchen",
+      "Patio/BBQ",
+      "Parking",
+      "Storage area",
+      "Green space/garden",
+      "Roof",
+      "Gym"] %>
+    <p> Please add other details if you need to. For example, if you chose pests and the location, you can tell us "mice" here. </p>
+    <%= f.input :sub_location, required: false %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
