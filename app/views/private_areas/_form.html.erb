@@ -1,7 +1,7 @@
-<%= form_for(@private_area) do |f| %>
+<%= simple_form_for(@private_area) do |f| %>
   <% if @private_area.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@private_area.errors.count, "error") %> prohibited this private_area from being saved:</h2>
+      <h2><%= pluralize(@private_area.errors.count, "error") %> prohibited this common_area from being saved:</h2>
 
       <ul>
       <% @private_area.errors.full_messages.each do |msg| %>
@@ -12,16 +12,46 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %><br>
+    <%= f.input :repair_type, collection: ["Heat/air conditioning",
+      "Plumbing",
+      "Leak", 
+      "Maintenance (broken door, window, cracked wall, plaster, ceiling, floor, insulation)",
+      "Lighting",
+      "Pests",
+      "Fridge/Stove",
+      "Electricity",
+      "Smoke detector",
+      "Cabinets",
+      "Locks",
+      "Fire alarm",
+      "Stairwell",
+      "Graffiti"] %>
 
-    <%= f.label :main_location %><br>
-    <%= f.text_field :main_location %><br>
+    <p>Only enter if your unit has more than one floor:</p>
+    <%= f.input :floor, required: false %>  
 
-    <%= f.label :sub_location %><br>
-    <%= f.text_field :sub_location %><br>
+    <%= f.input :main_location, collection: ["Lobby",
+      "Entrance",
+      "Hall",
+      "Bathroom",
+      "Bedroom",
+      "Livingroom",
+      "Diningroom",
+      "Kitchen",
+      "Balcony",
+      "Basement",
+      "Patio/BBQ",
+      "Parking",
+      "Storage area",
+      "Green space/garden",
+      "Roof",
+      ] %>
+
+    <p> Please add other details if you need to. For example, if you chose plumbing and the location, you can tell us "bathtub" here. </p>
+    <%= f.input :sub_location, required: false %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

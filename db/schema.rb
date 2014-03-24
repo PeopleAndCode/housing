@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324214044) do
+ActiveRecord::Schema.define(version: 20140324221126) do
 
   create_table "common_areas", force: true do |t|
     t.integer  "submissions_id"
@@ -39,8 +39,12 @@ ActiveRecord::Schema.define(version: 20140324214044) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "repair_type"
+    t.integer  "floor"
   end
 
+  add_index "private_areas", ["floor"], name: "index_private_areas_on_floor"
+  add_index "private_areas", ["repair_type"], name: "index_private_areas_on_repair_type"
   add_index "private_areas", ["submissions_id"], name: "index_private_areas_on_submissions_id"
 
   create_table "profiles", force: true do |t|
