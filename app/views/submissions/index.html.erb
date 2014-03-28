@@ -1,20 +1,14 @@
-<h1>Listing submissions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<h1>Listing repairs requests</h1>
 
   <tbody>
-    <% @submissions.each do |submission| %>
+    <% @submissions.each do |profiles| %>
       <tr>
-        <td><%= link_to 'Show', submission %></td>
-        <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
-        <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Type', profiles.common_areas.type, @profiles %></td>
+      </tr>
+      <tr>
+        <td><%#= link_to 'Show', @profiles %></td>
+        <td><%#= link_to 'Edit', edit_common_areas_path(@common_areas) %></td>
+        <td><%#= link_to 'Destroy', @common_areas, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +16,4 @@
 
 <br>
 
-<%= link_to 'New Submission', new_submission_path %>
+<%= link_to 'New Repair Request', new_profile_path(@profiles) %>
