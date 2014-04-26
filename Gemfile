@@ -34,6 +34,8 @@ end
 
 gem 'simple_form'
 
+gem 'rdoc', '~> 4.1.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

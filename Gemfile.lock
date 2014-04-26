@@ -114,6 +114,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   rails (= 4.0.0)
+  rdoc (~> 4.1.1)
   sass-rails (~> 4.0.0)
   sdoc
   simple_form
