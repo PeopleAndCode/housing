@@ -1,4 +1,4 @@
-= Request-log-analyzer
+= Housing
 
 This is a [kind of] tool to [do this awesome stuff]. Its purpose is to [do this action | ideology].
 
