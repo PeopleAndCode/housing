@@ -14,7 +14,7 @@ See the project wiki at [a great place on github] for documentation and addition
 == Installation & basic usage
 
 
-== Benchmarking on different rubies
+== Another Header
 
 == License
 License: MIT (see LICENSE)
