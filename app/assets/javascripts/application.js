@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require_tree .
 
@@ -26,3 +27,4 @@ $(document).ready ->
       $("#new_post").append "<p>ERROR</p>"
 
 $('#business_submit').click("actions")
+$(function(){ $(document).foundation(); });

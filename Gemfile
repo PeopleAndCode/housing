@@ -33,7 +33,7 @@ group :doc do
 end
 
 gem 'simple_form'
-gem 'foundation-rails'
+
 
 gem 'rdoc', '~> 4.1.1'
 
