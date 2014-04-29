@@ -1,4 +1,4 @@
-<%= simple_form_for(@private_area) do |f| %>
+<%= simple_form_for(@private_area, remote: true) do |f| %>
   <% if @private_area.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@private_area.errors.count, "error") %> prohibited this common_area from being saved:</h2>

@@ -15,6 +15,12 @@ class PrivateAreasController < ApplicationController
   # GET /private_areas/new
   def new
     @private_area = PrivateArea.new
+
+    respond_to do |format|
+      format.html #new.html.erb
+      format.json { render json: @private_area }
+      format.js
+    end
   end
 
   # GET /private_areas/1/edit
@@ -30,9 +36,11 @@ class PrivateAreasController < ApplicationController
       if @private_area.save
         format.html { redirect_to root_path, notice: 'Private area was successfully created.' }
         format.json { render action: 'show', status: :created, location: @private_area }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @private_area.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -69,6 +77,6 @@ class PrivateAreasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def private_area_params
-      params.require(:private_area).permit(:type, :main_location, :sub_location)
+      params.require(:private_area).permit(:repair_type, :main_location, :sub_location, :floor)
     end
 end
