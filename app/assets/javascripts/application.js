@@ -27,4 +27,4 @@ $(document).ready ->
       $("#new_post").append "<p>ERROR</p>"
 
 $('#business_submit').click("actions")
-$(function(){ $(document).foundation(); });
+
