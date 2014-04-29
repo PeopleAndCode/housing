@@ -1,4 +1,6 @@
 Housing::Application.routes.draw do
+  resources :users
+
   resources :private_areas
 
   resources :common_areas

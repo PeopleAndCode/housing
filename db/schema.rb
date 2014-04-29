@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324221126) do
+ActiveRecord::Schema.define(version: 20140429195029) do
 
   create_table "common_areas", force: true do |t|
     t.integer  "submissions_id"
@@ -61,6 +61,11 @@ ActiveRecord::Schema.define(version: 20140324221126) do
   add_index "profiles", ["submissions_id"], name: "index_profiles_on_submissions_id"
 
   create_table "submissions", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
