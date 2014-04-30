@@ -128,11 +128,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
-<<<<<<< HEAD
-  crimp
-=======
   devise
->>>>>>> 35fe6a203666395d9db1eac96aa38a8c035296da
   jbuilder (~> 1.2)
   jquery-rails
   pg (= 0.17.1)
