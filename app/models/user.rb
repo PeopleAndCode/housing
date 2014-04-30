@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_many :submissions
-  has_many :common_areas, through :submissions
-  has_many :private_areas, through :submissions
+  #has_many :common_areas, through :submissions
+  #has_many :private_areas, through :submissions
 
 end
