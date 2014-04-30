@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  require 'crimp'
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -45,6 +46,13 @@ class ProfilesController < ApplicationController
       if @profile.save
         format.html { redirect_to redirect_target, notice: 'Profile was successfully created.' }
         format.json { render action: 'show', status: :created, location: @profile }
+        Crimp.stringify({:a => {:b => 'b', :c => 'c'}, :d => 'd'})
+
+        # => [\"aSymbol=>[\\\"bSymbol=>b\\\", \\\"cSymbol=>c\\\"]Array\",\"dSymbol=>d\"]Array"
+
+        Crimp.signature({:a => {:b => 'b', :c => 'c'}, :d => 'd'})
+
+        # => "68d07febc4f47f56fa6ef5de063a77b1"
       else
         format.html { render action: 'new' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }

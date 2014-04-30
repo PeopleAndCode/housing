@@ -1,4 +1,7 @@
 Housing::Application.routes.draw do
+  devise_for :users
+  resources :users
+
   resources :private_areas
 
   resources :common_areas

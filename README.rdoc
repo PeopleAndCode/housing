@@ -1,28 +1,22 @@
-== README
+= Housing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a [kind of] tool to [do this awesome stuff]. Its purpose is to [do this action | ideology].
 
-Things you may want to cover:
+* Great thing I do #1
+* #2
+* #3
+* Awesome feature that makes it better than yours
+* MIT licensed
+* Runs on / compatible with 
 
-* Ruby version
+See the project wiki at [a great place on github] for documentation and additional information.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+== Installation & basic usage
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Another Header
+
+== License
+License: MIT (see LICENSE)
+
+ 
