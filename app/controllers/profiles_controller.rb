@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  require 'crimp'
+ # require 'crimp'
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
