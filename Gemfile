@@ -31,7 +31,7 @@ end
 
 gem 'simple_form'
 gem 'devise'
-
+gem 'mandrill-api', '~> 1.0.51'
 gem 'rdoc', '~> 4.1.1'
 
 group :development, :test do
@@ -43,11 +43,7 @@ group :production do
 	gem 'pg', '0.17.1'
 end
 
-
-
-
-
-ruby "2.1.0"
+ruby "2.1.1"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
