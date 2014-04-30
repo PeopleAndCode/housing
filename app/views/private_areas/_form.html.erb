@@ -1,7 +1,7 @@
-<%= simple_form_for(@private_area, remote: true) do |f| %>
+<%= simple_form_for(@private_area, remote: true, html: {class: "form-horizontal"}) do |f| %>
   <% if @private_area.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@private_area.errors.count, "error") %> prohibited this common_area from being saved:</h2>
+      <h2><%= pluralize(@private_area.errors.count, "error") %> prohibited this repair request from being saved:</h2>
 
       <ul>
       <% @private_area.errors.full_messages.each do |msg| %>
@@ -50,10 +50,9 @@
     <p> Please add other details if you need to. For example, if you chose plumbing and the location, you can tell us "bathtub" here. </p>
     <%= f.input :sub_location, required: false %><br>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="well">
+    <%= f.button :submit, :value => "Create Repair Request", class: 'btn btn-primary' %> 
   </div>
-
   <ul>
   <li>
     <ul class="nav_row">
