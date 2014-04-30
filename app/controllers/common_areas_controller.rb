@@ -69,6 +69,6 @@ class CommonAreasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def common_area_params
-      params.require(:common_area).permit(:type, :main_location, :sub_location, :floor)
+      params.require(:common_area).permit(:repair_type, :main_location, :sub_location, :floor)
     end
 end
