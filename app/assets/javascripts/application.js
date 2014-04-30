@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-
 //= require turbolinks
 //= require_tree .
 
@@ -20,11 +19,11 @@ function thisRuns(){
   alert("hey");
 }
 
-$(document).ready ->
-  $("#new_post").on("ajax:success", (e, data, status, xhr) ->
-  	$("#new_post").append xhr.responseText
-  	).on "ajax:error", (e, xhr, status, error) ->
-      $("#new_post").append "<p>ERROR</p>"
+// $(document).ready ->
+//   $("#new_post").on("ajax:success", (e, data, status, xhr) ->
+//   	$("#new_post").append xhr.responseText
+//   	).on "ajax:error", (e, xhr, status, error) ->
+//       $("#new_post").append "<p>ERROR</p>"
 
-$('#business_submit').click("actions")
+// $('#business_submit').click("actions")
 
