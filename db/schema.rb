@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140429200744) do
+ActiveRecord::Schema.define(version: 20140430180443) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "admins", force: true do |t|
     t.datetime "created_at"
@@ -31,9 +34,9 @@ ActiveRecord::Schema.define(version: 20140429200744) do
     t.string   "repair_type"
   end
 
-  add_index "common_areas", ["floor"], name: "index_common_areas_on_floor"
-  add_index "common_areas", ["repair_type"], name: "index_common_areas_on_repair_type"
-  add_index "common_areas", ["submissions_id"], name: "index_common_areas_on_submissions_id"
+  add_index "common_areas", ["floor"], name: "index_common_areas_on_floor", using: :btree
+  add_index "common_areas", ["repair_type"], name: "index_common_areas_on_repair_type", using: :btree
+  add_index "common_areas", ["submissions_id"], name: "index_common_areas_on_submissions_id", using: :btree
 
   create_table "private_areas", force: true do |t|
     t.integer  "submissions_id"
@@ -48,9 +51,9 @@ ActiveRecord::Schema.define(version: 20140429200744) do
     t.integer  "floor"
   end
 
-  add_index "private_areas", ["floor"], name: "index_private_areas_on_floor"
-  add_index "private_areas", ["repair_type"], name: "index_private_areas_on_repair_type"
-  add_index "private_areas", ["submissions_id"], name: "index_private_areas_on_submissions_id"
+  add_index "private_areas", ["floor"], name: "index_private_areas_on_floor", using: :btree
+  add_index "private_areas", ["repair_type"], name: "index_private_areas_on_repair_type", using: :btree
+  add_index "private_areas", ["submissions_id"], name: "index_private_areas_on_submissions_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.integer  "submissions_id"
@@ -63,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140429200744) do
     t.datetime "updated_at"
   end
 
-  add_index "profiles", ["submissions_id"], name: "index_profiles_on_submissions_id"
+  add_index "profiles", ["submissions_id"], name: "index_profiles_on_submissions_id", using: :btree
 
   create_table "submissions", force: true do |t|
     t.datetime "created_at"
@@ -88,7 +91,7 @@ ActiveRecord::Schema.define(version: 20140429200744) do
     t.string   "unit"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
