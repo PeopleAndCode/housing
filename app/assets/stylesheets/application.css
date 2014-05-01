@@ -14,6 +14,7 @@
  *= require_tree .
  */
 
-li {
+navbar li {
     display: inline;
+    hover: "active";
 }
