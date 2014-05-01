@@ -15,7 +15,7 @@ protected
                :remember_me)
     end
     devise_parameter_sanitizer.for(:account_update) do |u| 
-      u.permit(:email, :password, :password_confirmation, :current_password,
+      u.permit(:email, :password, :first_name, :last_name, :building, :unit, :password_confirmation, :current_password,
                :remember_me)
     end
   end

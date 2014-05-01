@@ -77,6 +77,6 @@ class PrivateAreasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def private_area_params
-      params.require(:private_area).permit(:repair_type, :main_location, :sub_location, :floor)
+      params.require(:private_area).permit(:repair_type, :main_location, :sub_location, :floor, :user_id, :submissions_id)
     end
 end

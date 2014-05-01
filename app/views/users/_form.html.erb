@@ -11,7 +11,43 @@
     </div>
   <% end %>
 
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<%= simple_form_for(@common_area, remote: true, html: {class: "form-horizontal"}) do |f| %>
+  <% if @common_area.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@common_area.errors.count, "error") %> prohibited this common_area from being saved:</h2>
+
+      <ul>
+      <% @common_area.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :building, collection: ["Building 1",
+      "Building 2",
+      "Building 3", 
+      "Building 4",
+      "Building 5",
+    %>
+
+    <%= f.input :unit %>
+    
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+  </div>
+   </div>
+  <div class="well">
+    <%= f.button :submit, :value => "Create Repair Request", class: 'btn btn-primary' %> 
+  </div>
+<% end %>
+
